@@ -97,6 +97,7 @@ resource "aws_instance" "web-instance002" {
   instance_type          = "t2.small"
   subnet_id              = aws_subnet.public_subnet_b.id
   availability_zone = "us-west-2b"
+  key_name = "terraform_key_pair"
   security_groups        = [aws_security_group.techops_SG-SSH.id, aws_security_group.techops_SG-https.id]
   tags = {
     name = "web-server-002"
